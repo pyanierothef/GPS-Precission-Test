@@ -7,7 +7,24 @@
 //
 
 import UIKit
+import MapKit
 
-class LocationAnnotation: NSObject {
-
+class LocationAnnotation: NSObject, MKAnnotation {
+    let location : LocationUpdate
+    
+    var title: String? {
+        return String(location.timestamp)
+    }
+    
+    var subtitle: String? {
+        return String(location.speed)
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return location.coordinate
+    }
+    
+    init(location: LocationUpdate) {
+        self.location = location
+    }
 }

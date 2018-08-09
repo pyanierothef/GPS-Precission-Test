@@ -12,6 +12,11 @@
 		367AC240211C7E1C0027C6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367AC23E211C7E1C0027C6FD /* Main.storyboard */; };
 		367AC242211C7E200027C6FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 367AC241211C7E200027C6FD /* Assets.xcassets */; };
 		367AC245211C7E200027C6FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367AC243211C7E200027C6FD /* LaunchScreen.storyboard */; };
+		367AC24D211C81490027C6FD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AC24C211C81490027C6FD /* LocationManager.swift */; };
+		367AC24F211C8E880027C6FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AC24E211C8E880027C6FD /* MapViewController.swift */; };
+		367AC251211C916E0027C6FD /* LocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AC250211C916E0027C6FD /* LocationUpdate.swift */; };
+		367AC253211C9B700027C6FD /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AC252211C9B700027C6FD /* Recorder.swift */; };
+		367AC255211CAEF40027C6FD /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AC254211CAEF40027C6FD /* LocationAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		367AC241211C7E200027C6FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		367AC244211C7E200027C6FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		367AC246211C7E200027C6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367AC24C211C81490027C6FD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		367AC24E211C8E880027C6FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		367AC250211C916E0027C6FD /* LocationUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdate.swift; sourceTree = "<group>"; };
+		367AC252211C9B700027C6FD /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		367AC254211CAEF40027C6FD /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				367AC241211C7E200027C6FD /* Assets.xcassets */,
 				367AC243211C7E200027C6FD /* LaunchScreen.storyboard */,
 				367AC246211C7E200027C6FD /* Info.plist */,
+				367AC24C211C81490027C6FD /* LocationManager.swift */,
+				367AC24E211C8E880027C6FD /* MapViewController.swift */,
+				367AC250211C916E0027C6FD /* LocationUpdate.swift */,
+				367AC252211C9B700027C6FD /* Recorder.swift */,
+				367AC254211CAEF40027C6FD /* LocationAnnotation.swift */,
 			);
 			path = "GPS Precission Test";
 			sourceTree = "<group>";
@@ -96,6 +111,11 @@
 				TargetAttributes = {
 					367AC236211C7E1C0027C6FD = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,6 +157,11 @@
 			files = (
 				367AC23D211C7E1C0027C6FD /* ViewController.swift in Sources */,
 				367AC23B211C7E1C0027C6FD /* AppDelegate.swift in Sources */,
+				367AC24D211C81490027C6FD /* LocationManager.swift in Sources */,
+				367AC253211C9B700027C6FD /* Recorder.swift in Sources */,
+				367AC255211CAEF40027C6FD /* LocationAnnotation.swift in Sources */,
+				367AC251211C916E0027C6FD /* LocationUpdate.swift in Sources */,
+				367AC24F211C8E880027C6FD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
