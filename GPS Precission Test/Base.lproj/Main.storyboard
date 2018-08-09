@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-jP-VUl" userLabel="Start Significant Location Changes">
-                                        <rect key="frame" x="68.5" y="0.0" width="238" height="300.5"/>
+                                        <rect key="frame" x="68.5" y="0.0" width="238" height="199.5"/>
                                         <state key="normal" title="Start Significant Location Changes"/>
                                         <connections>
                                             <action selector="startSignificant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrU-xL-Srq"/>
@@ -30,11 +30,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-Sz-t2g">
-                                        <rect key="frame" x="73.5" y="302.5" width="228" height="300.5"/>
+                                        <rect key="frame" x="73.5" y="201.5" width="228" height="200"/>
                                         <state key="normal" title="Start Standard Location Changes"/>
                                         <connections>
                                             <action selector="startStandard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jV7-MH-pYf"/>
                                             <segue destination="EGl-sZ-I4b" kind="show" id="eWY-pG-KuG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zG-kI-Ckk">
+                                        <rect key="frame" x="82.5" y="403.5" width="210" height="199.5"/>
+                                        <state key="normal" title="Start Region Location changes"/>
+                                        <connections>
+                                            <action selector="startRegion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIT-QC-Ez0"/>
+                                            <segue destination="EGl-sZ-I4b" kind="show" id="dPE-iJ-dzO"/>
                                         </connections>
                                     </button>
                                 </subviews>

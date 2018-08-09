@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if let launchOptions = launchOptions, launchOptions[UIApplicationLaunchOptionsKey.location] != nil {
-            LocationManager.shared.startReceivingSignificantLocationChanges()
+            LocationManager.shared.startReceivingLocationChanges()
         }
         
         return true

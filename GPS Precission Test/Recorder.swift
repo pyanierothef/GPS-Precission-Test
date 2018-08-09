@@ -56,6 +56,7 @@ class Recorder: NSObject {
                     try fileManager.createDirectory(at: folderPath, withIntermediateDirectories: true, attributes: nil)
                 }
                 
+                print(folderPath.absoluteString)
                 
                 let fileURL = folderPath.appendingPathComponent("Record.csv")
                 try csvString.write(to: fileURL, atomically: true, encoding: .utf8)

@@ -22,6 +22,8 @@ static let shared = LocationManager()
 var delegate : LocationManagerDelegate?
 
     let recorder = Recorder()
+    
+    var needStartMonitoringRegion = false
 
 override init() {
     super.init()
@@ -113,11 +115,33 @@ func locationManager(_ manager: CLLocationManager,
             return
         }
         // Configure and start the service.
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
        // locationManager.distanceFilter = 10  // In meters.
         locationManager.delegate = self
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
+    }
+    
+    func startReceivingRegionChanges() {
+        self.needStartMonitoringRegion = true
+        locationManager.requestLocation()
+    }
+    
+    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String ) {
+        // Make sure the app is authorized.
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            // Make sure region monitoring is supported.
+            if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+                // Register the region.
+               // let maxDistance = locationManager.maximumRegionMonitoringDistance
+                let region = CLCircularRegion(center: center,
+                                              radius: 10, identifier: identifier)
+                region.notifyOnEntry = false
+                region.notifyOnExit = true
+                
+                locationManager.startMonitoring(for: region)
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
@@ -126,6 +150,15 @@ func locationManager(_ manager: CLLocationManager,
             let location = LocationUpdate(loc, background: inBackground)
             recorder.record(r: location)
             return location
+        }
+        
+        if (locationManager.monitoredRegions.count > 0) {
+            
+            locationManager.stopMonitoring(for: locationManager.monitoredRegions.first!)
+            
+            monitorRegionAtLocation(center: locations.first!.coordinate, identifier: "reg")
+        } else if needStartMonitoringRegion {
+            monitorRegionAtLocation(center: locations.first!.coordinate, identifier: "reg")
         }
         
         guard let delegate = delegate else {
@@ -144,6 +177,15 @@ func locationManager(_ manager: CLLocationManager,
             return
         }
         // Notify the user of any errors.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        manager.requestLocation()
+        
     }
     
 }

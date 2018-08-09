@@ -31,5 +31,8 @@ class ViewController: UIViewController {
     @IBAction func startStandard(_ sender: Any) {
         LocationManager.shared.startReceivingLocationChanges()
     }
+    @IBAction func startRegion(_ sender: Any) {
+        LocationManager.shared.startReceivingRegionChanges()
+    }
 }
 
